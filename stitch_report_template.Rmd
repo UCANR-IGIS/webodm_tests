@@ -19,7 +19,7 @@ library(leaflet)
 library(dplyr)
 ```
 
-```{r import_excel, include=TRUE}
+```{r import_excel, include=FALSE}
 ## Import Mission Data
 missionsDF <- read_excel("treas_island_missions.xlsx", sheet = "Missions")
 stitchesDF <- read_excel("treas_island_missions.xlsx", sheet = "Stitches")
