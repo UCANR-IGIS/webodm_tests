@@ -1,0 +1,131 @@
+---
+title: "UAV Stitching Summary"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+  html_document: 
+    smart: no
+    css: stitch_report.css
+params:
+  StitchID: ti_2018-02-17_flt01_stch01
+---
+
+```{r setup, include=FALSE}
+## Setup
+knitr::opts_chunk$set(echo = TRUE)
+library(droneimg)
+library(readxl)
+library(rgdal)
+library(leaflet)
+library(dplyr)
+```
+
+```{r import_excel, include=TRUE}
+## Import Mission Data
+missionsDF <- read_excel("treas_island_missions.xlsx", sheet = "Missions")
+stitchesDF <- read_excel("treas_island_missions.xlsx", sheet = "Stitches")
+
+## Join tables and select stitching tasks
+stch_msn <- dplyr::left_join(stitchesDF, missionsDF, by = "MissionID")
+
+idx <- which(stitchesDF$StitchID == params$StitchID)
+stchLst <- stch_msn[idx,] 
+print(names(stchLst))
+```
+
+## `r stchLst$StitchTitle`
+
+<div class="leftthird">
+<span class="subhead">Flight Info</span>  
+__Location__: `r stchLst$Location`  
+__Date__: `r stchLst$Date`  
+__Start time__: `r format(stchLst$StartTime,"%H:%M")`  
+__End time__: `r format(stchLst$EndTime,"%H:%M")`  
+</div>
+
+<div class="rightthird">
+<span class="subhead">Processing Settings</span>  
+__Platform__: `r stchLst$StitchingPlatform`  
+__StitchID__: `r stchLst$StitchID`  
+__Parameter Preset__: `r stchLst$ParameterPreset`  
+__Processing Time (min)__: `r stchLst$ProcessTimeMin`  
+__Description__: `r stchLst$Description`  
+</div>
+
+<div class="rightthird">
+<span class="subhead">Capture Settings</span>  
+__Mission Type__: `r stchLst$MissionType`  
+__Num images__: `r stchLst$NumImages`  
+__Front overlap__: `r paste0(stchLst$OverlapFront, "%")`  
+__Side overlap__: `r paste0(stchLst$OverlapSide, "%")`  
+__Elevation (ft)__: `r stchLst$ElevationFt`  
+__Expected GSD (in)__: `r stchLst$ExpectedGSDin`  
+__Drone Speed__: `r stchLst$DroneSpeed`  
+__Trigger mode__: `r stchLst$TriggerMode`  
+__White balance__: `r stchLst$WhiteBalance`  
+__Exposure__: `r stchLst$Exposure`  
+</div>
+
+<div class="killfloat"></div>
+
+## Images {.tabset}
+
+### Locations
+
+```{r leaflet_ctr, echo=FALSE, message=FALSE}
+## Initiate a new leaflet object
+m <- leaflet(width="800px", height="600px")
+
+## Add tiles properties
+tilesURL = "http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+tilesAttr = "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
+m <- m %>% addTiles(tilesURL, attribution=tilesAttr)
+
+## Read in image centroids
+ptsUTM <- readOGR(dsn=dirname(stchLst$ImgShpPts), layer=basename(stchLst$ImgShpPts), verbose=FALSE)
+
+## Reproject pts to lat-long (required by leaflet)
+crsLatLong <- CRS("+proj=longlat +datum=WGS84")
+ptsLL <- spTransform(geometry(ptsUTM), crsLatLong)
+
+## Set the bounding box
+ptsBBox <- bbox(ptsLL)
+m_pts <- m %>% fitBounds(ptsBBox[1,1], ptsBBox[2,1], ptsBBox[1,2], ptsBBox[2,2])
+
+## Add markers
+m_pts <- m_pts %>% addCircleMarkers(data=ptsLL, radius=3, stroke=FALSE, fillColor="yellow", fillOpacity=1)
+
+## Display HTML Widget
+m_pts
+```
+
+### Footprints
+
+```{r leaflet_fp, echo=FALSE, message=FALSE}
+## Read in image centroids
+fpUTM <- readOGR(dsn=dirname(stchLst$ImgShpFp), layer=basename(stchLst$ImgShpFp), verbose=FALSE)
+
+## Reproject pts to lat-long (required by leaflet)
+fpLL <- spTransform(geometry(fpUTM), crsLatLong)
+
+## Set the bounding box
+fpBBox <- bbox(fpLL)
+m_fp <- m %>% fitBounds(fpBBox[1,1], fpBBox[2,1], fpBBox[1,2], fpBBox[2,2])
+
+## Add polygons
+m_fp <- m_fp %>% addPolygons(data=fpLL, fill=FALSE, stroke=TRUE, color=c("yellow", "LightPink")[1], weight=2, dashArray="1,2")
+
+## Display HTML Widget
+m_fp
+```
+
+## WebODM Results
+
+<iframe scrolling="no" title="WebODM" width="100%" height="600" frameBorder="1" src="`r stchLst$IFrameSrc`"></iframe>
+
+_Assessment_: `r stchLst$Assessment`
+
+## Pix4Dmapper Orthomosaic
+
+<iframe scrolling="no" title="WebODM" width="100%" height="600" frameBorder="1" src="`r stchLst$P4Dtiles`"></iframe>
+
+
