@@ -3,8 +3,10 @@ title: "UAV Stitching Summary"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
   html_document: 
-    smart: no
     css: stitch_report.css
+    self_contained: no
+    smart: no
+    lib_dir: libs
 params:
   StitchID: ti_2018-02-17_flt01_stch01
 ---
@@ -33,6 +35,8 @@ print(names(stchLst))
 ```
 
 ## `r stchLst$StitchTitle`
+
+<span class="tagline">`r stchLst$MissionDescription`</span>
 
 <div class="leftthird">
 <span class="subhead">Flight Info</span>  

@@ -28,6 +28,12 @@
   text-decoration: underline;
 }
 
+.tagline {
+  font-size: 125%;
+  font-weight: normal;
+  font-style: italic;
+}
+
 h1.title {
   font-size: 150%;
   font-weight: bold;
