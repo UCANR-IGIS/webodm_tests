@@ -1,26 +1,38 @@
 ---
-title: "WebODM Data Processing Tests" 
 output: 
   html_document: 
+    css: stitch_report.css
     self_contained: no
     smart: no
     lib_dir: libs
 ---
+# WebODM Data Processing - Samples
 
-# Treasure Island 
+## Treasure Island 
 
-* <a href="ti_2018-02-17_flt01_stch01.html" target="_blank">Flight 1, High Quality Preset</a>
+* <a href="ti_2018-02-17_flt01_stch01.html" target="_blank">Treasure Island, Flight 1</a>  
 
-* <a href="ti_2018-02-17_flt03_stch01.html" target="_blank">Flight 3, High Quality Preset</a>
+* <a href="ti_2018-02-17_flt03_stch01.html" target="_blank">Treasure Island, Flight 2</a>  
 
-# El Dorado
+## El Dorado County
 
-*coming soon*
+* <a href="mg_2017-12-10_x3pass01ew_stch01.html" target="_blank">El Dorado Master Gardener Demo</a>  
 
-# Hopland
+* <a href="gf_hr-holding-pen_2017-05-21_x5_stch01.html" target="_blank">Grizzly Flats Ranch - Holding Pen area</a>  
 
-*coming soon*
+* <a href="gf_hr-hilltop_2017-05-21_x5_stch01.html" target="_blank">Grizzly Flats Ranch - Hilltop area</a>  
 
+## Mendocino County
+
+* <a href="hrec_watershed1_2017-01-16_x5_stch01.html" target="_blank">Hopland REC Watershed 1</a>
+
+## San Mateo County
+
+* <a href="elkus_2017-04-19_hero4_stch01.html" target="_blank">Elkus Ranch</a>
+
+<hr style="height:5px; color:DarkGray; background-color:DarkGray;">
+
+<img src="images/webodm-logo_247x60.png" class="bottombar"/> <img src="images/pix4d-logo_82x54.png" class="bottombar"/> <img src="images/igis-logo_60x60.png" class="bottombar"/> <img src="images/sdsc-logo_239x60.png" class="bottombar"/>
 
 
 

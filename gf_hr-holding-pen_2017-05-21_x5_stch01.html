@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Drone Data Processing Summary</title>
+
+<script src="libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-1.1/highlight.js"></script>
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<link href="libs/leaflet-0.7.7/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-0.7.7/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<link href="libs/leaflet-label-0.2.2/leaflet.label.css" rel="stylesheet" />
+<script src="libs/leaflet-label-0.2.2/leaflet.label.js"></script>
+<script src="libs/Proj4Leaflet-0.7.2/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-0.7.2/proj4leaflet.js"></script>
+<script src="libs/leaflet-binding-1.1.0/leaflet.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="stitch_report.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Drone Data Processing Summary</h1>
+<h4 class="date"><em>05 March, 2018</em></h4>
+
+</div>
+
+
+<div id="grizzly-flats-holding-pen-high-quality-preset" class="section level2">
+<h2>Grizzly Flats Holding Pen, High Quality preset</h2>
+<p><span class="tagline">HR Holding Pen, nadir, single grid, 80% front overlap, 394ft, 44 images</span></p>
+<div class="leftthird">
+<p><span class="subhead">Flight Info</span><br />
+<strong>Location</strong>: El Dorado<br />
+<strong>Date</strong>: 2017-05-21<br />
+<strong>Start time</strong>: 13:05<br />
+<strong>End time</strong>: 13:09<br />
+<strong>UAV</strong>: Inspire 1<br />
+<strong>Sensor</strong>: ZenMuse X5</p>
+</div>
+<div class="rightthird">
+<p><span class="subhead">Processing Settings</span><br />
+<strong>Platform</strong>: WebODM<br />
+<strong>StitchID</strong>: gf_hr-holding-pen_2017-05-21_x5_stch01<br />
+<strong>Parameter Preset</strong>: High Quality<br />
+<strong>Processing Time (min)</strong>: 28<br />
+<strong>Description</strong>: High Quality Preset, no resize</p>
+</div>
+<div class="rightthird">
+<p><span class="subhead">Capture Settings</span><br />
+<strong>Flight Control App</strong>: Pix4Dcapture<br />
+<strong>Mission Type</strong>: grid<br />
+<strong>Num images</strong>: 44<br />
+<strong>Front overlap</strong>: 80%<br />
+<strong>Side overlap</strong>: NA%<br />
+<strong>Altitude (ft)</strong>: 394<br />
+<strong>Image GSD (in)</strong>: 1.36<br />
+<strong>Drone Speed</strong>: NA<br />
+<strong>Trigger mode</strong>: NA<br />
+<strong>White balance</strong>: NA<br />
+<strong>Exposure</strong>: NA</p>
+</div>
+<div class="killfloat">
+
+</div>
+</div>
+<div id="images" class="section level2 tabset">
+<h2>Images</h2>
+<div id="locations" class="section level3">
+<h3>Locations</h3>
+<div id="htmlwidget-55e280d04e9a6155637e" style="width:800px;height:600px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-55e280d04e9a6155637e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"}]},{"method":"addCircleMarkers","args":[[38.6245305277778,38.6244122777778,38.6242936666667,38.6241752222222,38.6240547777778,38.6239342777778,38.6238131111111,38.6236926944444,38.6235718888889,38.6236083888889,38.6236748055556,38.6237069166667,38.6238303611111,38.6239470277778,38.6240687777778,38.6241886388889,38.62430925,38.6244288888889,38.6245480277778,38.6246685,38.6247755833333,38.6248139722222,38.6248871666667,38.6248497777778,38.6247291111111,38.6246106111111,38.6244916388889,38.6243711944444,38.6242501666667,38.6241298333333,38.6240113888889,38.6238905555556,38.6238229444444,38.6238953055556,38.6239578888889,38.6240251666667,38.6241449444444,38.6242646666667,38.6243833055556,38.6245033611111,38.6246240833333,38.6247443888889,38.6248888888889,38.6249850555556],[-120.596252555556,-120.596345472222,-120.596436638889,-120.596529555556,-120.596622722222,-120.596715472222,-120.596807555556,-120.596900416667,-120.596992166667,-120.59706025,-120.597216666667,-120.597259111111,-120.59715925,-120.597071111111,-120.596978638889,-120.596886888889,-120.596794861111,-120.596702722222,-120.5966105,-120.596517916667,-120.596435194444,-120.596546833333,-120.596697833333,-120.596743277778,-120.596837722222,-120.596928361111,-120.597021555556,-120.5971145,-120.597206972222,-120.597299166667,-120.597392583333,-120.597485555556,-120.597541416667,-120.597678444444,-120.59781425,-120.597741583333,-120.597655111111,-120.5975655,-120.597473416667,-120.597381027778,-120.597288666667,-120.597196638889,-120.597085416667,-120.597011222222],3,null,null,{"lineCap":null,"lineJoin":null,"clickable":true,"pointerEvents":null,"className":"","stroke":false,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":["#FF0000FF","#FF1E00FF","#FF3B00FF","#FF5900FF","#FF7700FF","#FF9400FF","#FFB200FF","#FFD000FF","#FFED00FF","#F3FF00FF","#D5FF00FF","#B8FF00FF","#9AFF00FF","#7DFF00FF","#5FFF00FF","#41FF00FF","#24FF00FF","#06FF00FF","#00FF18FF","#00FF35FF","#00FF53FF","#00FF71FF","#00FF8EFF","#00FFACFF","#00FFCAFF","#00FFE7FF","#00F9FFFF","#00DBFFFF","#00BEFFFF","#00A0FFFF","#0082FFFF","#0065FFFF","#0047FFFF","#002AFFFF","#000CFFFF","#1200FFFF","#2F00FFFF","#4D00FFFF","#6B00FFFF","#8800FFFF","#A600FFFF","#C400FFFF","#E100FFFF","#FF00FFFF"],"fillOpacity":1,"dashArray":null},null,null,null,null,null,null,null]}],"fitBounds":[38.6235718888889,-120.59781425,38.6249850555556,-120.596252555556],"limits":{"lat":[38.6235718888889,38.6249850555556],"lng":[-120.59781425,-120.596252555556]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="footprints" class="section level3">
+<h3>Footprints</h3>
+<div id="htmlwidget-45d921e9f06224365011" style="width:800px;height:600px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-45d921e9f06224365011">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"}]},{"method":"addPolygons","args":[[[[{"lng":[-120.595835626884,-120.597161142402,-120.596669491377,-120.595343970351,-120.595835626884],"lat":[38.623895244116,38.6245809055344,38.625165810127,38.6244801429989,38.623895244116]}]],[[{"lng":[-120.595928195615,-120.597254815468,-120.59676275599,-120.59543613062,-120.595928195615],"lat":[38.6237764645864,38.6244626967798,38.6250480896543,38.6243618517418,38.6237764645864]}]],[[{"lng":[-120.596016535525,-120.597346199528,-120.596856749452,-120.595527079831,-120.596016535525],"lat":[38.6236590002748,38.6243415945846,38.6249283317249,38.6242457317094,38.6236590002748]}]],[[{"lng":[-120.596105925681,-120.597440838782,-120.596953192693,-120.595618273854,-120.596105925681],"lat":[38.6235406545191,38.6242207341791,38.6248097885681,38.6241297031972,38.6235406545191]}]],[[{"lng":[-120.596198388135,-120.597532587445,-120.597047063565,-120.595712858487,-120.596198388135],"lat":[38.623421846304,38.6240989674804,38.6246877078894,38.624010581028,38.623421846304]}]],[[{"lng":[-120.596291137957,-120.59762533602,-120.597139813744,-120.595805609912,-120.596291137957],"lat":[38.6233013466254,38.6239784667119,38.624567207568,38.6238900817966,38.6233013466254]}]],[[{"lng":[-120.596383221122,-120.597717417919,-120.597231897247,-120.595897694681,-120.596383221122],"lat":[38.6231801802779,38.6238572992816,38.624446040582,38.6237689158935,38.6231801802779]}]],[[{"lng":[-120.596476789271,-120.597808761169,-120.597324051295,-120.595992073647,-120.596476789271],"lat":[38.6230608188183,38.6237368082058,38.6243245687128,38.6236485736595,38.6230608188183]}]],[[{"lng":[-120.596568539104,-120.597900509741,-120.597415801463,-120.596083825075,-120.596568539104],"lat":[38.6229400135804,38.6236160018907,38.6242037628397,38.6235277688636,38.6229400135804]}]],[[{"lng":[-120.5978444019,-120.597051607899,-120.596276090301,-120.597068891556,-120.5978444019],"lat":[38.6232425283993,38.6243240831029,38.6239742438393,38.6228926945886,38.6232425283993]}]],[[{"lng":[-120.598012207864,-120.597182612527,-120.596421117969,-120.59725071976,-120.598012207864],"lat":[38.6233268430337,38.6243888404663,38.6240227623955,38.6229607705335,38.6233268430337]}]],[[{"lng":[-120.597731699067,-120.596350547744,-120.596786530984,-120.59816767483,-120.597731699067],"lat":[38.6243156575404,38.6237076273402,38.6230981740824,38.62370619893,38.6243156575404]}]],[[{"lng":[-120.597561236265,-120.596250559744,-120.596757270688,-120.598067942244,-120.597561236265],"lat":[38.6244728724204,38.6237662029125,38.6231878485864,38.6238945122968,38.6244728724204]}]],[[{"lng":[-120.597515041657,-120.59616014339,-120.596627188079,-120.597982079881,-120.597515041657],"lat":[38.6245716343222,38.6239202864562,38.6233224197351,38.6239737620211,38.6245716343222]}]],[[{"lng":[-120.597412491027,-120.596065958512,-120.596544794157,-120.597891320573,-120.597412491027],"lat":[38.6246997596317,38.6240319687126,38.6234377944968,38.6241055797462,38.6246997596317]}]],[[{"lng":[-120.59731578067,-120.595978927629,-120.596458004404,-120.597794851506,-120.59731578067],"lat":[38.6248176523058,38.6241495261378,38.6235596240784,38.6242277446183,38.6248176523058]}]],[[{"lng":[-120.597224827658,-120.595884622825,-120.596364901896,-120.59770510076,-120.597224827658],"lat":[38.6249398402138,38.6242700384496,38.6236786583857,38.6243484544935,38.6249398402138]}]],[[{"lng":[-120.597132688604,-120.595792482513,-120.596272763172,-120.597612963294,-120.597132688604],"lat":[38.6250594794269,38.6243896765744,38.6237982969504,38.6244680941464,38.6250594794269]}]],[[{"lng":[-120.597041868551,-120.59570017301,-120.5961791388,-120.597520828322,-120.597041868551],"lat":[38.6251780289885,38.6245100610216,38.6239180251569,38.6245859874747,38.6251780289885]}]],[[{"lng":[-120.596948566103,-120.595609105455,-120.596087274558,-120.597426729206,-120.596948566103],"lat":[38.6252974515363,38.6246305957609,38.6240395470582,38.6247063972033,38.6252974515363]}]],[[{"lng":[-120.597099099278,-120.595556548282,-120.59577129868,-120.59731383627,-120.597099099278],"lat":[38.62526565513,38.6249661712729,38.62428550802,38.6245849886326,38.62526565513]}]],[[{"lng":[-120.597360945484,-120.596474624682,-120.59573271412,-120.596619040184,-120.597360945484],"lat":[38.6244921859152,38.6255268553731,38.6251357526073,38.624101088901,38.6244921859152]}]],[[{"lng":[-120.597506199303,-120.596636784729,-120.595889460176,-120.596758880358,-120.597506199303],"lat":[38.6245578756838,38.6256000941651,38.625216451803,38.6241742390179,38.6245578756838]}]],[[{"lng":[-120.596363653511,-120.597644429922,-120.597122908627,-120.595842128025,-120.596363653511],"lat":[38.624203539929,38.6249308544332,38.6254960145484,38.624768694239,38.624203539929]}]],[[{"lng":[-120.596424688978,-120.597746721062,-120.597250762568,-120.595928725119,-120.596424688978],"lat":[38.6240915942471,38.6247832608505,38.6253666266882,38.6246749543459,38.6240915942471]}]],[[{"lng":[-120.59651284004,-120.597836836259,-120.597343889312,-120.596019887635,-120.59651284004],"lat":[38.6239747597457,38.6246622276558,38.6252464611731,38.6245589875468,38.6239747597457]}]],[[{"lng":[-120.596600385863,-120.597930466482,-120.597442732456,-120.596112646177,-120.596600385863],"lat":[38.6238580789312,38.62453827816,38.6251251975056,38.6244449925875,38.6238580789312]}]],[[{"lng":[-120.596694740199,-120.598023304376,-120.597534266988,-120.596205697203,-120.596694740199],"lat":[38.6237370591763,38.6244190772002,38.6250053283809,38.6243233046609,38.6237370591763]}]],[[{"lng":[-120.596785802163,-120.598115880301,-120.597628149488,-120.596298065691,-120.596785802163],"lat":[38.6236166073462,38.6242968044031,38.6248837246462,38.6242035219,38.6236166073462]}]],[[{"lng":[-120.596876942633,-120.598210347491,-120.597721397944,-120.596387987399,-120.596876942633],"lat":[38.6234946891094,38.6241765869874,38.6247649762095,38.6240830726137,38.6234946891094]}]],[[{"lng":[-120.596971412892,-120.598301488599,-120.597813760981,-120.596483679615,-120.596971412892],"lat":[38.6233778302059,38.6240580250903,38.6246449462309,38.6239647456573,38.6233778302059]}]],[[{"lng":[-120.597064033665,-120.598395217449,-120.597907084666,-120.596575895213,-120.597064033665],"lat":[38.6232564687859,38.6239372298799,38.624524640982,38.6238438741894,38.6232564687859]}]],[[{"lng":[-120.598299672713,-120.597587090915,-120.596783152255,-120.597495742956,-120.598299672713],"lat":[38.6234195701566,38.6245407569307,38.6242263135133,38.6231051318891,38.6234195701566]}]],[[{"lng":[-120.598470745219,-120.597652317234,-120.596886136067,-120.597704570763,-120.598470745219],"lat":[38.6235416123399,38.6246101423266,38.6242489931296,38.6231804686821,38.6235416123399]}]],[[{"lng":[-120.598687062756,-120.597592505044,-120.596941432395,-120.598035990337,-120.598687062756],"lat":[38.6237453821208,38.624653383397,38.6241703889658,38.6232623937462,38.6237453821208]}]],[[{"lng":[-120.598198352238,-120.596829431589,-120.597284822111,-120.598653735843,-120.598198352238],"lat":[38.6246447395151,38.6240096458224,38.6234055922271,38.6240406804051,38.6246447395151]}]],[[{"lng":[-120.598096633577,-120.59674350593,-120.597213596136,-120.598566717405,-120.598096633577],"lat":[38.6247712823055,38.6241156888538,38.6235186051022,38.6241741929488,38.6247712823055]}]],[[{"lng":[-120.598003136712,-120.596656305907,-120.597127870706,-120.598474695264,-120.598003136712],"lat":[38.6248906425051,38.6242329935843,38.6236386893741,38.6242963327023,38.6248906425051]}]],[[{"lng":[-120.597910388131,-120.596562775283,-120.597036452628,-120.598384059257,-120.597910388131],"lat":[38.6250109259986,38.6243503319624,38.6237556836634,38.6244162720805,38.6250109259986]}]],[[{"lng":[-120.597816239062,-120.596471218521,-120.596945823888,-120.59829083827,-120.597816239062],"lat":[38.6251310556975,38.6244691685079,38.6238756650877,38.6245375466599,38.6251310556975]}]],[[{"lng":[-120.59772139514,-120.596381209666,-120.596855945533,-120.598196124929,-120.59772139514],"lat":[38.6252508011321,38.6245887330238,38.6239973641143,38.6246594266259,38.6252508011321]}]],[[{"lng":[-120.597629414797,-120.596286225787,-120.59676387035,-120.598107053291,-120.597629414797],"lat":[38.6253737965428,38.624707673048,38.624114979815,38.6247810976681,38.6253737965428]}]],[[{"lng":[-120.597517831734,-120.596175760521,-120.596653008957,-120.597995074111,-120.597517831734],"lat":[38.6255177724309,38.6248522027255,38.6242600039292,38.6249255680023,38.6255177724309]}]],[[{"lng":[-120.597443997809,-120.596100806251,-120.596578454004,-120.597921639493,-120.597443997809],"lat":[38.6256144638668,38.6249483381766,38.6243556458245,38.6250217658729,38.6256144638668]}]]],null,null,{"lineCap":null,"lineJoin":null,"clickable":true,"pointerEvents":null,"className":"","stroke":true,"color":["#FF0000FF","#FF1E00FF","#FF3B00FF","#FF5900FF","#FF7700FF","#FF9400FF","#FFB200FF","#FFD000FF","#FFED00FF","#F3FF00FF","#D5FF00FF","#B8FF00FF","#9AFF00FF","#7DFF00FF","#5FFF00FF","#41FF00FF","#24FF00FF","#06FF00FF","#00FF18FF","#00FF35FF","#00FF53FF","#00FF71FF","#00FF8EFF","#00FFACFF","#00FFCAFF","#00FFE7FF","#00F9FFFF","#00DBFFFF","#00BEFFFF","#00A0FFFF","#0082FFFF","#0065FFFF","#0047FFFF","#002AFFFF","#000CFFFF","#1200FFFF","#2F00FFFF","#4D00FFFF","#6B00FFFF","#8800FFFF","#A600FFFF","#C400FFFF","#E100FFFF","#FF00FFFF"],"weight":2,"opacity":0.5,"fill":false,"fillColor":["#FF0000FF","#FF1E00FF","#FF3B00FF","#FF5900FF","#FF7700FF","#FF9400FF","#FFB200FF","#FFD000FF","#FFED00FF","#F3FF00FF","#D5FF00FF","#B8FF00FF","#9AFF00FF","#7DFF00FF","#5FFF00FF","#41FF00FF","#24FF00FF","#06FF00FF","#00FF18FF","#00FF35FF","#00FF53FF","#00FF71FF","#00FF8EFF","#00FFACFF","#00FFCAFF","#00FFE7FF","#00F9FFFF","#00DBFFFF","#00BEFFFF","#00A0FFFF","#0082FFFF","#0065FFFF","#0047FFFF","#002AFFFF","#000CFFFF","#1200FFFF","#2F00FFFF","#4D00FFFF","#6B00FFFF","#8800FFFF","#A600FFFF","#C400FFFF","#E100FFFF","#FF00FFFF"],"fillOpacity":0.2,"dashArray":"1,2","smoothFactor":1,"noClip":false},null,null,null,null,null]}],"fitBounds":[38.6228926945886,-120.598687062756,38.6256144638668,-120.595343970351],"limits":{"lat":[38.6228926945886,38.6256144638668],"lng":[-120.598687062756,-120.595343970351]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="webodm-results" class="section level2">
+<h2><br/><img src="images/webodm-logo_60x59.png"></img> WebODM Results</h2>
+<iframe scrolling="no" title="WebODM" width="100%" height="600" frameBorder="1" src="https://webodm.nautilus.optiputer.net/public/task/01599038-3a86-4891-8d0e-9513ea466d40/iframe/map/">
+</iframe>
+<p><a href="https://webodm.nautilus.optiputer.net/public/task/01599038-3a86-4891-8d0e-9513ea466d40/map/" target="_blank">Full screen</a><br />
+<em>Assessment</em>: NA</p>
+</div>
+<div id="pix4dmapper-orthomosaic" class="section level2">
+<h2><br/><img src="images/pix4d-logo_82x54.png"></img> Pix4Dmapper Orthomosaic</h2>
+<iframe scrolling="no" title="WebODM" width="100%" height="600" frameBorder="1" src="https://data.andylyons.org/google_tiles/gf_hr-holding-pen_2017-05-21_x5/index.html">
+</iframe>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

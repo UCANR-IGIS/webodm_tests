@@ -29,8 +29,9 @@
 }
 
 .tagline {
-  font-size: 120%;
+  font-size: 125%;
   font-weight: normal;
+  font-style: italic;
 }
 
 h1.title {
@@ -44,3 +45,6 @@ h2 {
   color: MidnightBlue;
 }
 
+img.bottombar {
+  margin:0 4em;
+}

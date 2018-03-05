@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Drone Data Processing Summary</title>
+
+<script src="libs/jquery-1.12.4/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<link href="libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="libs/highlightjs-1.1/highlight.js"></script>
+<script src="libs/htmlwidgets-0.9/htmlwidgets.js"></script>
+<link href="libs/leaflet-0.7.7/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-0.7.7/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<link href="libs/leaflet-label-0.2.2/leaflet.label.css" rel="stylesheet" />
+<script src="libs/leaflet-label-0.2.2/leaflet.label.js"></script>
+<script src="libs/Proj4Leaflet-0.7.2/proj4-compressed.js"></script>
+<script src="libs/Proj4Leaflet-0.7.2/proj4leaflet.js"></script>
+<script src="libs/leaflet-binding-1.1.0/leaflet.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="stitch_report.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Drone Data Processing Summary</h1>
+<h4 class="date"><em>05 March, 2018</em></h4>
+
+</div>
+
+
+<div id="elkus-ranch-high-quality-preset" class="section level2">
+<h2>Elkus Ranch, High Quality preset</h2>
+<p><span class="tagline">Elkus Ranch Environ Education Center, nadir, single grid, 400ft</span></p>
+<div class="leftthird">
+<p><span class="subhead">Flight Info</span><br />
+<strong>Location</strong>: San Mateo<br />
+<strong>Date</strong>: 2017-04-19<br />
+<strong>Start time</strong>: 14:12<br />
+<strong>End time</strong>: 14:16<br />
+<strong>UAV</strong>: Solo<br />
+<strong>Sensor</strong>: Hero4</p>
+</div>
+<div class="rightthird">
+<p><span class="subhead">Processing Settings</span><br />
+<strong>Platform</strong>: WebODM<br />
+<strong>StitchID</strong>: elkus_2017-04-19_hero4_stch01<br />
+<strong>Parameter Preset</strong>: High Quality<br />
+<strong>Processing Time (min)</strong>: NA<br />
+<strong>Description</strong>: High Quality Preset, no resize</p>
+</div>
+<div class="rightthird">
+<p><span class="subhead">Capture Settings</span><br />
+<strong>Flight Control App</strong>: Tower<br />
+<strong>Mission Type</strong>: grid<br />
+<strong>Num images</strong>: 43<br />
+<strong>Front overlap</strong>: NA%<br />
+<strong>Side overlap</strong>: NA%<br />
+<strong>Altitude (ft)</strong>: 400<br />
+<strong>Image GSD (in)</strong>: 3<br />
+<strong>Drone Speed</strong>: NA<br />
+<strong>Trigger mode</strong>: NA<br />
+<strong>White balance</strong>: NA<br />
+<strong>Exposure</strong>: NA</p>
+</div>
+<div class="killfloat">
+
+</div>
+</div>
+<div id="images" class="section level2 tabset">
+<h2>Images</h2>
+<div id="locations" class="section level3">
+<h3>Locations</h3>
+<div id="htmlwidget-2e29baf0e7fb6ae310a4" style="width:800px;height:600px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2e29baf0e7fb6ae310a4">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"}]},{"method":"addCircleMarkers","args":[[37.4127923000861,37.4127937999556,37.4127975999139,37.4127971999667,37.4125286999944,37.4123425999833,37.4123135999167,37.4123138999972,37.4120782999861,37.411853200025,37.4120338000056,37.4123943999444,37.4127579001028,37.413213300025,37.4132727001194,37.4132775,37.4132828999222,37.4132831001083,37.4133154999389,37.4135291999722,37.413763,37.4137633999722,37.413758400075,37.413758699975,37.4139831999028,37.4142265999583,37.4142455000667,37.414245,37.414248,37.414369,37.4147175,37.4147237000028,37.4147253000917,37.4149886999944,37.4151942999833,37.4152102001194,37.4152134000944,37.4152245999611,37.41540119985,37.4156942999194,37.4157019000194,37.4156962000611,37.4159361999861],[-122.391540200039,-122.391874700025,-122.392324,-122.392805399939,-122.393075400003,-122.392730500033,-122.392283100028,-122.391820600036,-122.391443600028,-122.391847699972,-122.392117300067,-122.392030700006,-122.391944599975,-122.391847600014,-122.39224719995,-122.3927346,-122.393089599903,-122.393578100003,-122.3940388,-122.394391699994,-122.394350399936,-122.393885800017,-122.393431500061,-122.392950599994,-122.3928744,-122.393238099953,-122.393671399944,-122.394181800081,-122.394670699975,-122.395010599989,-122.394893299953,-122.394534399906,-122.393956199994,-122.393659600061,-122.393940300072,-122.394386800033,-122.394874,-122.3953612,-122.395692599969,-122.395594800097,-122.395245399983,-122.394788200036,-122.394550900061],3,null,null,{"lineCap":null,"lineJoin":null,"clickable":true,"pointerEvents":null,"className":"","stroke":false,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":["#FF0000FF","#FF1E00FF","#FF3D00FF","#FF5B00FF","#FF7900FF","#FF9800FF","#FFB600FF","#FFD500FF","#FFF300FF","#EDFF00FF","#CEFF00FF","#B0FF00FF","#92FF00FF","#73FF00FF","#55FF00FF","#37FF00FF","#18FF00FF","#00FF06FF","#00FF24FF","#00FF43FF","#00FF61FF","#00FF80FF","#00FF9EFF","#00FFBCFF","#00FFDBFF","#00FFF9FF","#00E7FFFF","#00C8FFFF","#00AAFFFF","#008CFFFF","#006DFFFF","#004FFFFF","#0031FFFF","#0012FFFF","#0C00FFFF","#2B00FFFF","#4900FFFF","#6700FFFF","#8600FFFF","#A400FFFF","#C200FFFF","#E100FFFF","#FF00FFFF"],"fillOpacity":1,"dashArray":null},null,null,null,null,null,null,null]}],"fitBounds":[37.411853200025,-122.395692599969,37.4159361999861,-122.391443600028],"limits":{"lat":[37.411853200025,37.4159361999861],"lng":[-122.395692599969,-122.391443600028]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="footprints" class="section level3">
+<h3>Footprints</h3>
+<p>Footrprints not available (perhaps because the images lack yaw data)</p>
+</div>
+</div>
+<div id="webodm-results" class="section level2">
+<h2><br/><img src="images/webodm-logo_60x59.png"></img> WebODM Results</h2>
+<iframe scrolling="no" title="WebODM" width="100%" height="600" frameBorder="1" src="https://webodm.nautilus.optiputer.net/public/task/d60faf7e-8a15-4b86-b38e-2252e0ae4e98/iframe/map/">
+</iframe>
+<p><a href="https://webodm.nautilus.optiputer.net/public/task/d60faf7e-8a15-4b86-b38e-2252e0ae4e98/map/" target="_blank">Full screen</a><br />
+<em>Assessment</em>: NA</p>
+</div>
+<div id="pix4dmapper-orthomosaic" class="section level2">
+<h2><br/><img src="images/pix4d-logo_82x54.png"></img> Pix4Dmapper Orthomosaic</h2>
+<iframe scrolling="no" title="WebODM" width="100%" height="600" frameBorder="1" src="https://data.andylyons.org/google_tiles/elkus_2017-04-19_hero4/index.html">
+</iframe>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

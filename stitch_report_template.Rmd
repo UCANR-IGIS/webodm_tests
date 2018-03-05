@@ -1,5 +1,5 @@
 ---
-title: "UAV Stitching Summary"
+title: "Drone Data Processing Summary"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
   html_document: 
@@ -14,17 +14,19 @@ params:
 ```{r setup, include=FALSE}
 ## Setup
 knitr::opts_chunk$set(echo = TRUE)
-library(droneimg)
+#library(uavimg)
 library(readxl)
 library(rgdal)
 library(leaflet)
 library(dplyr)
+library(htmltools)
 ```
 
 ```{r import_excel, include=FALSE}
 ## Import Mission Data
-missionsDF <- read_excel("treas_island_missions.xlsx", sheet = "Missions")
-stitchesDF <- read_excel("treas_island_missions.xlsx", sheet = "Stitches")
+excel_fn <- "../webodm_compare.xlsx"
+missionsDF <- read_excel(excel_fn, sheet = "Missions")
+stitchesDF <- read_excel(excel_fn, sheet = "WebODM_Stitches")
 
 ## Join tables and select stitching tasks
 stch_msn <- dplyr::left_join(stitchesDF, missionsDF, by = "MissionID")
@@ -44,6 +46,8 @@ __Location__: `r stchLst$Location`
 __Date__: `r stchLst$Date`  
 __Start time__: `r format(stchLst$StartTime,"%H:%M")`  
 __End time__: `r format(stchLst$EndTime,"%H:%M")`  
+__UAV__: `r stchLst$UAV`  
+__Sensor__: `r stchLst$Sensor`  
 </div>
 
 <div class="rightthird">
@@ -57,12 +61,13 @@ __Description__: `r stchLst$Description`
 
 <div class="rightthird">
 <span class="subhead">Capture Settings</span>  
+__Flight Control App__: `r stchLst$FlightControlApp`  
 __Mission Type__: `r stchLst$MissionType`  
 __Num images__: `r stchLst$NumImages`  
 __Front overlap__: `r paste0(stchLst$OverlapFront, "%")`  
 __Side overlap__: `r paste0(stchLst$OverlapSide, "%")`  
-__Elevation (ft)__: `r stchLst$ElevationFt`  
-__Expected GSD (in)__: `r stchLst$ExpectedGSDin`  
+__Altitude (ft)__: `r stchLst$AltitudeFt`  
+__Image GSD (in)__: `r stchLst$ExpectedGSDin`  
 __Drone Speed__: `r stchLst$DroneSpeed`  
 __Trigger mode__: `r stchLst$TriggerMode`  
 __White balance__: `r stchLst$WhiteBalance`  
@@ -77,6 +82,9 @@ __Exposure__: `r stchLst$Exposure`
 
 ```{r leaflet_ctr, echo=FALSE, message=FALSE}
 ## Initiate a new leaflet object
+shp_dir <- dirname(stchLst$ImgShpPts)
+if (!file.exists(shp_dir)) stop(paste0("Shapefile directory not found: ", shp_dir))
+
 m <- leaflet(width="800px", height="600px")
 
 ## Add tiles properties
@@ -95,8 +103,11 @@ ptsLL <- spTransform(geometry(ptsUTM), crsLatLong)
 ptsBBox <- bbox(ptsLL)
 m_pts <- m %>% fitBounds(ptsBBox[1,1], ptsBBox[2,1], ptsBBox[1,2], ptsBBox[2,2])
 
+#fillColor <- "yellow"
+fillColor <- rainbow(length(ptsLL), end=5/6)
+
 ## Add markers
-m_pts <- m_pts %>% addCircleMarkers(data=ptsLL, radius=3, stroke=FALSE, fillColor="yellow", fillOpacity=1)
+m_pts <- m_pts %>% addCircleMarkers(data=ptsLL, radius=3, stroke=FALSE, fillColor=fillColor, fillOpacity=1)
 
 ## Display HTML Widget
 m_pts
@@ -104,31 +115,40 @@ m_pts
 
 ### Footprints
 
-```{r leaflet_fp, echo=FALSE, message=FALSE}
-## Read in image centroids
-fpUTM <- readOGR(dsn=dirname(stchLst$ImgShpFp), layer=basename(stchLst$ImgShpFp), verbose=FALSE)
+```{r leaflet_fp, echo=FALSE, message=FALSE, eval=TRUE}
+if (is.na(stchLst$ImgShpFp)) {
+  p("Footrprints not available (perhaps because the images lack yaw data)")
 
-## Reproject pts to lat-long (required by leaflet)
-fpLL <- spTransform(geometry(fpUTM), crsLatLong)
+} else {
 
-## Set the bounding box
-fpBBox <- bbox(fpLL)
-m_fp <- m %>% fitBounds(fpBBox[1,1], fpBBox[2,1], fpBBox[1,2], fpBBox[2,2])
-
-## Add polygons
-m_fp <- m_fp %>% addPolygons(data=fpLL, fill=FALSE, stroke=TRUE, color=c("yellow", "LightPink")[1], weight=2, dashArray="1,2")
-
-## Display HTML Widget
-m_fp
+  ## Read in image footprints
+  fpUTM <- readOGR(dsn=dirname(stchLst$ImgShpFp), layer=basename(stchLst$ImgShpFp), verbose=FALSE)
+  
+  ## Reproject pts to lat-long (required by leaflet)
+  fpLL <- spTransform(geometry(fpUTM), crsLatLong)
+  
+  ## Set the bounding box
+  fpBBox <- bbox(fpLL)
+  m_fp <- m %>% fitBounds(fpBBox[1,1], fpBBox[2,1], fpBBox[1,2], fpBBox[2,2])
+  
+  #outline_color <- c("yellow", "LightPink")[1]
+  outline_color <- rainbow(length(fpLL), end=5/6)
+  
+  ## Add polygons
+  m_fp <- m_fp %>% addPolygons(data=fpLL, fill=FALSE, stroke=TRUE, color=outline_color, weight=2, dashArray="1,2")
+  
+  ## Display HTML Widget
+  m_fp
+}
 ```
 
-## WebODM Results
+## <br/><img src="images/webodm-logo_60x59.png"></img> WebODM Results
 
 <iframe scrolling="no" title="WebODM" width="100%" height="600" frameBorder="1" src="`r stchLst$IFrameSrc`"></iframe>
-
+`r paste0("<a href=\"", stchLst$PublicURL, "\" target=\"_blank\">Full screen</a>")`  
 _Assessment_: `r stchLst$Assessment`
 
-## Pix4Dmapper Orthomosaic
+## <br/><img src="images/pix4d-logo_82x54.png"></img> Pix4Dmapper Orthomosaic
 
 <iframe scrolling="no" title="WebODM" width="100%" height="600" frameBorder="1" src="`r stchLst$P4Dtiles`"></iframe>
 
