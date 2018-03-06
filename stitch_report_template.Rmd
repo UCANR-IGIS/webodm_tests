@@ -152,4 +152,12 @@ _Assessment_: `r stchLst$Assessment`
 
 <iframe scrolling="no" title="WebODM" width="100%" height="600" frameBorder="1" src="`r stchLst$P4Dtiles`"></iframe>
 
+```{r 3dmesh, echo=FALSE, message=FALSE, eval=FALSE}
+if (!is.na(stchLst$TexturedMeshSrc)) {
+  br()
+  h2("3D Mesh")
+}
+```
+
+
 
