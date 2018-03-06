@@ -8,12 +8,6 @@ output:
 ---
 # WebODM Data Processing - Samples
 
-## Treasure Island 
-
-* <a href="ti_2018-02-17_flt01_stch01.html" target="_blank">Treasure Island, Flight 1</a>  
-
-* <a href="ti_2018-02-17_flt03_stch01.html" target="_blank">Treasure Island, Flight 2</a>  
-
 ## El Dorado County
 
 * <a href="mg_2017-12-10_x3pass01ew_stch01.html" target="_blank">El Dorado Master Gardener Demo</a>  
@@ -30,11 +24,14 @@ output:
 
 * <a href="elkus_2017-04-19_hero4_stch01.html" target="_blank">Elkus Ranch</a>
 
+## Treasure Island 
+
+* <a href="ti_2018-02-17_flt01_stch01.html" target="_blank">Treasure Island, Flight 1</a>  
+
+* <a href="ti_2018-02-17_flt03_stch01.html" target="_blank">Treasure Island, Flight 2</a>  
+
 <hr style="height:5px; color:DarkGray; background-color:DarkGray;">
 
 <img src="images/logo_cenic_140x37.png" class="bottombar"/> <img src="images/webodm-logo_60x59.png" class="bottombar"/> <img src="images/pix4d-logo_82x54.png" class="bottombar"/> <img src="images/igis-logo_60x60.png" class="bottombar"/> <img src="images/sdsc-logo_239x60.png" class="bottombar"/>
-
-
-
 
 
