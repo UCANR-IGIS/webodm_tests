@@ -32,7 +32,7 @@ output:
 
 <hr style="height:5px; color:DarkGray; background-color:DarkGray;">
 
-<img src="images/logo_cenic_140x37.png" class="bottombar"/> <img src="images/webodm-logo_247x60.png" class="bottombar"/> <img src="images/pix4d-logo_82x54.png" class="bottombar"/> <img src="images/igis-logo_60x60.png" class="bottombar"/> <img src="images/sdsc-logo_239x60.png" class="bottombar"/>
+<img src="images/logo_cenic_140x37.png" class="bottombar"/> <img src="images/webodm-logo_60x59.png" class="bottombar"/> <img src="images/pix4d-logo_82x54.png" class="bottombar"/> <img src="images/igis-logo_60x60.png" class="bottombar"/> <img src="images/sdsc-logo_239x60.png" class="bottombar"/>
 
 
 
